@@ -24,4 +24,4 @@ source $HOME/.vim/syntax_highlighting.vim
 source $HOME/.vim/tab_completion.vim
 source $HOME/.vim/visual.vim
 
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
