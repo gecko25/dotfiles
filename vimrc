@@ -13,6 +13,10 @@ set smartcase
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
 
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+
 source $HOME/.vim/autocmd.vim
 source $HOME/.vim/colors.vim
 source $HOME/.vim/ctags.vim
@@ -24,4 +28,3 @@ source $HOME/.vim/syntax_highlighting.vim
 source $HOME/.vim/tab_completion.vim
 source $HOME/.vim/visual.vim
 
-call pathogen#infect()
