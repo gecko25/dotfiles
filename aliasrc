@@ -17,9 +17,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias o=$EDITOR
 alias dotf="cd $HOME/.dotfiles"
-
-# services
-alias nick="mplayer ~/Music/Theme\ Music/528491.wav > /dev/null 2>&1"
+alias ct="cd ~/Sandbox/crowdtap"
+alias sn="cd ~/Sandbox/sniper"
 
 # misc.
 alias timestamp="date +%Y%m%d%H%M%S"
