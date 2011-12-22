@@ -2,6 +2,8 @@
 --type-add=html=.html.erb,.html.haml,.mustache,.jst
 --type-add=js=.js.erb
 --type-add=css=.sass,.less,.scss
+--type-add=eco=.eco
+--type-add=coffee=.coffee
 --type-set=markdown=.markdown,.md
 --type-set=cucumber=.feature
 --ignore-dir=vendor

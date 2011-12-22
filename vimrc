@@ -9,6 +9,7 @@ set incsearch     " do incremental searching
 
 set ignorecase
 set smartcase
+set mouse=a
 
 " Snippets are activated by Shift+Tab
 let g:snippetsEmu_key = "<S-Tab>"
