@@ -90,6 +90,7 @@ compdef _gem gem
 
 _brew() {
   if (( CURRENT == 2 )); then
+    compadd list
     compadd install uninstall
     compadd link unlink
     compadd missing prune cleanup
@@ -107,6 +108,8 @@ _brew() {
       compadd $(brew search ${words[-1]})
     elif [[ $words[2] == "uninstall" ]]; then
       compadd $(brew list)
+    elif [[ $words[2] == "cleanup" ]]; then
+      compadd $(brew list --versions | grep ' .* ' | awk '{print $1}')
     elif [[ $words[2] == "upgrade" ]]; then
       compadd $(brew outdated | awk '{print $1}')
     fi

@@ -24,7 +24,12 @@ if has("autocmd")
   autocmd BufWinLeave * call clearmatches()
 
   autocmd BufNewFile,BufRead Gemfile setlocal filetype=ruby
+  autocmd BufNewFile,BufRead Guardfile setlocal filetype=ruby
+  autocmd BufNewFile,BufRead Appraisals setlocal filetype=ruby
   autocmd BufNewFile,BufRead *.mustache set filetype=mustache
+  autocmd BufNewFile,BufRead *.gemfile set filetype=ruby
+  autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+  autocmd BufNewFile,BufRead *.md set filetype=markdown
 
   autocmd FileType text,markdown setlocal textwidth=78
 

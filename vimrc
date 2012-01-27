@@ -21,6 +21,7 @@ filetype plugin indent on
 source $HOME/.vim/autocmd.vim
 source $HOME/.vim/colors.vim
 source $HOME/.vim/ctags.vim
+source $HOME/.vim/clipboard.vim
 source $HOME/.vim/gui.vim
 source $HOME/.vim/rails.vim
 source $HOME/.vim/sessions.vim

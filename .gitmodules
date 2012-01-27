@@ -70,3 +70,21 @@
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = http://github.com/kchmck/vim-coffee-script
+[submodule "vim/bundle/greplace.vim"]
+	path = vim/bundle/greplace.vim
+	url = https://github.com/vim-scripts/greplace.vim.git
+[submodule "vim/bundle/file-line.vim"]
+	path = vim/bundle/file-line.vim
+	url = https://github.com/bogado/file-line.git
+[submodule "vim/bundle/vim-pasta"]
+	path = vim/bundle/vim-pasta
+	url = https://github.com/sickill/vim-pasta.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/tslime.vim"]
+	path = vim/bundle/tslime.vim
+	url = https://github.com/jgdavey/tslime.vim.git
+[submodule "vim/bundle/vim-turbux"]
+	path = vim/bundle/vim-turbux
+	url = https://github.com/jgdavey/vim-turbux.git

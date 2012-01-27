@@ -17,6 +17,5 @@ nnoremap <silent> <F4> :GundoToggle<CR>
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-vmap <silent> <C-c> :write! ~/.current-output <CR>
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
