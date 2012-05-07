@@ -112,5 +112,5 @@ _status_result() {
   echo "%(?,$(_green "☺"), $(_red "☹"))"
 }
 
-PROMPT='$(_bracket_wrap "$(_basic)$(_separate $(_colored_git_branch))$(_separate $(_colored_git_difference))")$(_display_current_vim_mode) '
+PROMPT='${vcs_info_msg_0_} $(_bracket_wrap "$(_basic)$(_separate $(_colored_git_branch))$(_separate $(_colored_git_difference))")$(_display_current_vim_mode) '
 RPROMPT='$(_status_result) $(_rprompt)'
