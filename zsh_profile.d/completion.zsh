@@ -4,24 +4,6 @@ setopt prompt_subst
 autoload -U compinit
 compinit
 
-# autocompletion for ruby_test
-# works with tu/tf aliases
-_ruby_test() {
-  if [[ -n $words[2] ]]; then
-    compadd $(ruby_test -l ${words[2]})
-  fi
-}
-compdef _ruby_test ruby_test
-
-# autocompletion for ruby_spec
-# works with sm/sc aliases
-_ruby_spec() {
-  if [[ -n $words[2] ]]; then
-    compadd $(ruby_spec -l ${words[2]})
-  fi
-}
-compdef _ruby_spec ruby_spec
-
 _grb() {
   if [[ -n $(git symbolic-ref HEAD 2> /dev/null) ]]; then
     if (( CURRENT == 2 )); then
@@ -58,7 +40,7 @@ _rake_does_task_list_need_generating() {
 _rake() {
   if [[ -f Rakefile ]]; then
     if _rake_does_task_list_need_generating; then
-      rake --silent --tasks | cut -d " " -f 2 > .rake_tasks
+      rake --silent --tasks | cut -d " " -f 2 | cut -d "[" -f 1 > .rake_tasks
     fi
     compadd $(cat .rake_tasks)
   fi
@@ -88,6 +70,14 @@ _gem() {
 }
 compdef _gem gem
 
+function __filter_homebrew {
+  if [[ $1 == "" ]]; then
+    cat $HOMEBREW_SEARCH_CACHE_PATH
+  else;
+    cat $HOMEBREW_SEARCH_CACHE_PATH | grep $1
+  fi
+}
+
 _brew() {
   if (( CURRENT == 2 )); then
     compadd list
@@ -100,13 +90,15 @@ _brew() {
   elif (( CURRENT >= 3 )); then
     if (( CURRENT == 3 )); then
       if [[ $words[2] == "options" || $words[2] == "info" || $words[2] == "edit" || $words[2] == "options" || $words[2] == "deps" || $words[2] == "uses" || $words[2] == "home" ]]; then
-        compadd $(brew search ${words[3]})
+        compadd $(__filter_homebrew ${words[3]})
       fi
     fi
 
     if [[ $words[2] == "install" ]]; then
-      compadd $(brew search ${words[-1]})
+      compadd $(__filter_homebrew ${words[-1]})
     elif [[ $words[2] == "uninstall" ]]; then
+      compadd $(brew list)
+    elif [[ $words[2] == "unlink" ]]; then
       compadd $(brew list)
     elif [[ $words[2] == "cleanup" ]]; then
       compadd $(brew list --versions | grep ' .* ' | awk '{print $1}')
@@ -121,3 +113,15 @@ _cheat() {
   compadd $(cheat sheets)
 }
 compdef _cheat cheat
+
+_ack() {
+  if (( CURRENT == 2 )); then
+    if [[ -a tmp/tags ]]; then
+      compadd $(cat tmp/tags | awk '{print $1}')
+    fi
+  else;
+    _files
+  fi
+}
+
+compdef _ack ack

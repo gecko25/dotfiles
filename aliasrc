@@ -1,8 +1,4 @@
 # ruby/rails
-alias tf="ruby_test functional"
-alias tu="ruby_test unit"
-alias sc="ruby_spec controllers"
-alias sm="ruby_spec models"
 alias bes="bundle exec rspec"
 alias ber="bundle exec rake"
 alias bake="bundle exec rake"
@@ -22,6 +18,8 @@ alias o=$EDITOR
 alias dotf="cd $HOME/.dotfiles"
 alias ct="cd ~/Sandbox/crowdtap"
 alias sn="cd ~/Sandbox/sniper"
+alias ls="ls -G"
+alias mkdir="mkdir -p"
 
 # misc.
 alias timestamp="date +%Y%m%d%H%M%S"
