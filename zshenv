@@ -7,6 +7,8 @@ PATH=$PATH:$HOME/.rvm/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export LANG=en_US.UTF-8
 export RBENV_ROOT=$HOME/.rbenv
 
+path=($HOME/.dotfiles/bin /usr/local/share/npm/bin /usr/local/Cellar/python/2.7.2/bin /usr/local/share/python /usr/local/sbin /usr/local/bin $path)
+
 [[ -d $RBENV_ROOT/shims ]] && eval "$(rbenv init -)"
 
-path=(.git/safe/../../bin $path)
+path=(.git/safe/../../bin .git/safe/../../bin/stubs $path)
