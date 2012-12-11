@@ -105,10 +105,6 @@ _current_ruby() {
   if [[ -n $rvm_path ]]; then
     $rvm_path/bin/rvm-prompt
   fi
-
-  if [[ -n $(rbenv version) ]]; then
-    rbenv version-name
-  fi
 }
 
 _rprompt() {
