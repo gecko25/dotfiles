@@ -1,3 +1,6 @@
+# expand functions in the prompt
+setopt prompt_subst
+
 _git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
   if [ -n $ref ]; then
@@ -62,6 +65,12 @@ _color() {
   fi
 }
 
+_default_color() {
+  if [ -n "$1" ]; then
+    echo "%{$reset_color%}$1"
+  fi
+}
+
 _user_name() {
   if [ $USER != "joshuaclayton" ]; then
     echo "$USER "
@@ -69,7 +78,7 @@ _user_name() {
 }
 
 _separate()               { if [ -n "$1" ]; then echo " $1"; fi }
-_grey()                   { echo "$(_color "$1" grey)" }
+_grey()                   { echo "$(_default_color "$1")" }
 _yellow()                 { echo "$(_color "$1" yellow)" }
 _green()                  { echo "$(_color "$1" green)" }
 _red()                    { echo "$(_color "$1" red)" }

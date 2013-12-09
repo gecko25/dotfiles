@@ -1,10 +1,13 @@
 ackrc
 gemrc
 vimrc
+tigrc
 vim
+pryrc
 irbrc
 irbrc.d
 inputrc
+zprofile
 zshrc
 zsh_profile.d
 aliasrc

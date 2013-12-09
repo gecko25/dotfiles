@@ -2,32 +2,32 @@ set nocompatible
 
 let mapleader = "\\"
 
-set nobackup
-set nowritebackup
-set history=50    " keep 50 lines of command line history
-set incsearch     " do incremental searching
+source $HOME/.vim/vundle.vim
 
-set ignorecase
-set smartcase
-set mouse=a
+Bundle 'othree/html5.vim'
+Bundle 'matchit.zip'
+Bundle 'tComment'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'kana/vim-textobj-user'
+Bundle 'vim-coffee-script'
 
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
-
-call pathogen#infect()
-syntax on
-filetype plugin indent on
-
-source $HOME/.vim/autocmd.vim
+source $HOME/.vim/backup_files.vim
+source $HOME/.vim/clipboard.vim
 source $HOME/.vim/colors.vim
 source $HOME/.vim/ctags.vim
-source $HOME/.vim/clipboard.vim
+source $HOME/.vim/git.vim
 source $HOME/.vim/gui.vim
+source $HOME/.vim/history.vim
 source $HOME/.vim/rails.vim
+source $HOME/.vim/ruby.vim
+source $HOME/.vim/search.vim
 source $HOME/.vim/sessions.vim
 source $HOME/.vim/shortcuts.vim
 source $HOME/.vim/syntax_highlighting.vim
 source $HOME/.vim/tab_completion.vim
-source $HOME/.vim/visual.vim
 source $HOME/.vim/tmux.vim
+source $HOME/.vim/visual.vim
 
+filetype plugin indent on
+
+source $HOME/.vim/autocmd.vim
