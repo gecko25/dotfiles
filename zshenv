@@ -5,10 +5,9 @@ export ANDROID_HOME=/usr/local/opt/android-sdk/
 
 PATH=$PATH:$HOME/.rvm/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export LANG=en_US.UTF-8
+export EDITOR=vim
 export RBENV_ROOT=$HOME/.rbenv
-
-path=($HOME/.dotfiles/bin /usr/local/share/npm/bin /usr/local/Cellar/python/2.7.2/bin /usr/local/share/python /usr/local/sbin /usr/local/bin $path)
-
-[[ -d $RBENV_ROOT/shims ]] && eval "$(rbenv init -)"
-
-path=(.git/safe/../../bin .git/safe/../../bin/stubs $path)
+export REMOTE_GEM_CACHE_PATH=$HOME/.remote-gem-cache
+export ZSH_HISTORY_PATH=$HOME/.zsh_history
+export HOMEBREW_SEARCH_CACHE_PATH=$HOME/.homebrew-search-cache
+export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
