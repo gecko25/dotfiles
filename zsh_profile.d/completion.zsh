@@ -108,9 +108,7 @@ compdef _cheat cheat
 
 _ack() {
   if (( CURRENT == 2 )); then
-    if [[ -a tmp/tags || -a .git/tags ]]; then
-      compadd $(parse_tags)
-    fi
+    compadd $(parse_tags)
   else;
     _files
   fi
@@ -118,3 +116,9 @@ _ack() {
 
 compdef _ack ack
 compdef _ack ag
+
+_mark() {
+  _files
+}
+
+compdef _mark mark

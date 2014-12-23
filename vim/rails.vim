@@ -1,4 +1,4 @@
-Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 
 let g:rails_projections = {
 \ "app/constraints/*_constraint.rb": {
@@ -13,6 +13,13 @@ let g:rails_projections = {
 \   "template": "class %SJob\nend",
 \   "test": [
 \     "spec/jobs/%s_job_spec.rb"
+\   ]
+\ },
+\ "app/policies/*_policy.rb": {
+\   "command": "policy",
+\   "template": "class %SPolicy\n  class Scope\n  end\nend",
+\   "test": [
+\     "spec/policies/%s_policy_spec.rb"
 \   ]
 \ },
 \ "app/decorators/*_decorator.rb": {
