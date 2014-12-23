@@ -5,4 +5,5 @@ for zsh_source in $HOME/.zsh_profile.d/*.zsh; do
 done
 
 cd_to_most_recently_opened_directory
-attach_to_tmux
+eval "$(rbenv init - --no-rehash)"
+export PATH="$HOME/.bin:$PATH"
