@@ -6,6 +6,7 @@ source $HOME/.vim/vundle.vim
 Plugin 'othree/html5.vim'
 Plugin 'matchit.zip'
 Plugin 'tComment'
+Plugin 'tabular'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 Plugin 'vim-coffee-script'
