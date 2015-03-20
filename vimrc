@@ -1,7 +1,9 @@
 set nocompatible
 filetype off
 
-source $HOME/.vim/vundle.vim
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/Vundle.vim
+call vundle#begin()
 
 Plugin 'othree/html5.vim'
 Plugin 'matchit.zip'
@@ -11,6 +13,7 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 Plugin 'vim-coffee-script'
 Plugin 'tpope/vim-eunuch'
+Plugin 'gmarik/Vundle.vim'
 
 source $HOME/.vim/backup_files.vim
 source $HOME/.vim/clipboard.vim
