@@ -14,6 +14,8 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'vim-coffee-script'
 Plugin 'tpope/vim-eunuch'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'JulesWang/css.vim'
 
 source $HOME/.vim/backup_files.vim
 source $HOME/.vim/clipboard.vim
