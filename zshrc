@@ -7,3 +7,4 @@ done
 cd_to_most_recently_opened_directory
 eval "$(rbenv init - --no-rehash)"
 export PATH="$HOME/.bin:$PATH"
+eval "$(rbenv init - zsh --no-rehash)"
