@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+if [ "$1" != "" ]; then
+  if [ ! -f "$HOME/.ssh/id_rsa_$1.pub" ]; then
+    echo "Could not find file $HOME/.ssh/id_rsa_$1.pub"
+  fi
+
+  if [ -h $HOME/.ssh/id_rsa.pub ]; then
+    exec `rm -rf $HOME/.ssh/id_rsa.pub`
+    exec `rm -rf $HOME/.ssh/id_rsa`
+    exec `ln -s $HOME/.ssh/id_rsa_$1.pub $HOME/.ssh/id_rsa.pub`
+    exec `ln -s $HOME/.ssh/id_rsa_$1 $HOME/.ssh/id_rsa`
+  fi
+fi

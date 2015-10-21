@@ -1,4 +1,8 @@
 class Installer
+  def files
+    File.new(File.join(self.pwd, "MANIFEST"), "r").read.split("\n")
+  end
+
   def symlink(target, link)
     if File.symlink?(link)
       unlink(link)
@@ -21,20 +25,29 @@ class Installer
       File.unlink(link)
     end
   end
+
+  def create_dotfile_directory_symlink
+    dotfile_dir = pwd
+    symlink(pwd, target_path("dotfiles"))
+  end
+
+  def pwd; File.dirname(__FILE__); end
+  def target_path(file)
+    File.join(ENV["HOME"], ".#{file}")
+  end
+
+  def install_symlinks
+    files.each do |file|
+      symlink(File.join(pwd, file), target_path(file))
+    end
+  end
 end
 
-def pwd; File.dirname(__FILE__); end
-def target_path(file)
-  File.join(ENV["HOME"], ".#{file}")
-end
-
-files = File.new(File.join(pwd, "MANIFEST"), "r").read.split("\n")
 
 desc "Install all dotfiles"
 task :install do
-  files.each do |file|
-    Installer.new.symlink(File.join(pwd, file), target_path(file))
-  end
+  Installer.new.install_symlinks
+  Installer.new.create_dotfile_directory_symlink
 end
 
 desc "Remove all dotfies"
