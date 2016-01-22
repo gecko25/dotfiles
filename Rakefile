@@ -52,7 +52,7 @@ end
 
 desc "Remove all dotfies"
 task :uninstall do
-  files.each do |file|
-    Installer.new.unlink(target_path(file))
+  Installer.new.files.each do |file|
+    Installer.new.unlink(Installer.new.target_path(file))
   end
 end
