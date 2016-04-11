@@ -33,7 +33,6 @@ source $HOME/.vim/sessions.vim
 source $HOME/.vim/shortcuts.vim
 source $HOME/.vim/syntax_highlighting.vim
 source $HOME/.vim/tab_completion.vim
-source $HOME/.vim/tmux.vim
 source $HOME/.vim/visual.vim
 
 filetype plugin indent on
