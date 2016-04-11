@@ -1,6 +1,8 @@
 set nocompatible
 filetype off
 
+set clipboard=unnamed
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/Vundle.vim
 call vundle#begin()

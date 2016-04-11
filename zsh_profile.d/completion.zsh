@@ -39,11 +39,6 @@ _rake() {
 }
 compdef _rake rake
 
-_thor() {
-  compadd $(thor list | grep "thor " | cut -d " " -f 2)
-}
-compdef _thor thor
-
 # if using rvm, add rvm_leave_gem_alone=1 to ~/.rvmrc
 _gem() {
   if (( CURRENT == 2 )); then
