@@ -21,3 +21,11 @@ alias mkdir="mkdir -p"
 
 # misc.
 alias timestamp="date +%Y%m%d%H%M%S"
+
+
+alias BETASERON_SOURCE="~/Documents/repositories/betaseron-website/src/main/webapp/source"
+alias BETASERON="~/Documents/repositories/betaseron-website"
+
+#Make our terminal colorful
+#source ~/.bashrc
+alias ls="ls -GFlash"
